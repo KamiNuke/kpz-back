@@ -359,6 +359,165 @@
         }
       ],
       "protocolProfileBehavior": {}
+    },
+    {
+      "name": "/posts",
+      "item": [
+        {
+          "name": "/",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept-Language",
+                "type": "text",
+                "value": "sl-SI"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/:id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept-Language",
+                "type": "text",
+                "value": "sl-SI"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/3",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept-Language",
+                "type": "text",
+                "value": "sl-SI"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/9",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept-Language",
+                "type": "text",
+                "value": "sl-SI"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{{token}}"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "postname",
+                  "value": "Tyrion1",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "test name",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/5",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "5"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
     }
   ],
   "protocolProfileBehavior": {}

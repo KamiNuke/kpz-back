@@ -4,7 +4,7 @@ import { getRepository } from 'typeorm';
 import { Post } from 'orm/entities/posts/Post';
 import { CustomError } from 'utils/response/custom-error/CustomError';
 
-export const edit = async (req: Request, res: Response, next: NextFunction) => {
+export const update = async (req: Request, res: Response, next: NextFunction) => {
   const id = req.params.id;
   const { title, content } = req.body;
 
@@ -21,8 +21,8 @@ export const edit = async (req: Request, res: Response, next: NextFunction) => {
     post.content = content;
 
     try {
-      await postRepository.save(post);
-      res.customSuccess(200, 'Post successfully saved.');
+      const updatedPost = await postRepository.save(post);
+      res.customSuccess(200, 'Post successfully saved.', updatedPost);
     } catch (err) {
       const customError = new CustomError(409, 'Raw', `Post can't be saved.`, null, err);
       return next(customError);

@@ -8,7 +8,7 @@ import { ErrorValidation } from 'utils/response/custom-error/types';
 export const validatorEdit = async (req: Request, res: Response, next: NextFunction) => {
   let { username, name } = req.body;
   const errorsValidation: ErrorValidation[] = [];
-  const userRepository = getRepository(Post);
+  const userRepository = getRepository(User);
 
   username = !username ? '' : username;
   name = !name ? '' : name;
